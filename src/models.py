@@ -51,7 +51,7 @@ class Comentario(db.Model):
     comment_text: Mapped[str] = mapped_column(nullable=False)
 
     user: Mapped["User"] = relationship(back_populates="comentarios")
-    publi: Mapped["Publicacion"] = relationship(back_populates="comentarios")
+    publicacion: Mapped["Publicacion"] = relationship(back_populates="comentarios")
 
     user_id: Mapped[int] = mapped_column(ForeignKey('user.id'), nullable=False)
     post_id: Mapped[int] = mapped_column(ForeignKey('publicacion.id'), nullable=False)
